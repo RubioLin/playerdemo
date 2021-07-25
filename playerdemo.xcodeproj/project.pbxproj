@@ -7,19 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F199A3E26AB27D800597D01 /* 戀.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0F199A3726AB27D700597D01 /* 戀.mp3 */; };
+		0F199A3F26AB27D800597D01 /* 時よ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0F199A3826AB27D700597D01 /* 時よ.mp3 */; };
+		0F199A4026AB27D800597D01 /* Family Song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0F199A3926AB27D700597D01 /* Family Song.mp3 */; };
+		0F199A4126AB27D800597D01 /* SUN.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0F199A3A26AB27D800597D01 /* SUN.mp3 */; };
+		0F199A4226AB27D800597D01 /* IDEA.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0F199A3B26AB27D800597D01 /* IDEA.mp3 */; };
+		0F199A4326AB27D800597D01 /* 不思議.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0F199A3C26AB27D800597D01 /* 不思議.mp3 */; };
+		0F199A4426AB27D800597D01 /* POP VIRUS.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0F199A3D26AB27D800597D01 /* POP VIRUS.mp3 */; };
+		0F199A4826AB31F100597D01 /* SongData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F199A4726AB31F100597D01 /* SongData.swift */; };
 		0F5300EE26AAAD4700FEB52D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5300ED26AAAD4700FEB52D /* AppDelegate.swift */; };
 		0F5300F026AAAD4700FEB52D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5300EF26AAAD4700FEB52D /* SceneDelegate.swift */; };
-		0F5300F226AAAD4700FEB52D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5300F126AAAD4700FEB52D /* ViewController.swift */; };
+		0F5300F226AAAD4700FEB52D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5300F126AAAD4700FEB52D /* MainViewController.swift */; };
 		0F5300F526AAAD4700FEB52D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5300F326AAAD4700FEB52D /* Main.storyboard */; };
 		0F5300F726AAAD4800FEB52D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F5300F626AAAD4800FEB52D /* Assets.xcassets */; };
 		0F5300FA26AAAD4800FEB52D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5300F826AAAD4800FEB52D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F199A3726AB27D700597D01 /* 戀.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "戀.mp3"; sourceTree = "<group>"; };
+		0F199A3826AB27D700597D01 /* 時よ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "時よ.mp3"; sourceTree = "<group>"; };
+		0F199A3926AB27D700597D01 /* Family Song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Family Song.mp3"; sourceTree = "<group>"; };
+		0F199A3A26AB27D800597D01 /* SUN.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SUN.mp3; sourceTree = "<group>"; };
+		0F199A3B26AB27D800597D01 /* IDEA.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = IDEA.mp3; sourceTree = "<group>"; };
+		0F199A3C26AB27D800597D01 /* 不思議.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "不思議.mp3"; sourceTree = "<group>"; };
+		0F199A3D26AB27D800597D01 /* POP VIRUS.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "POP VIRUS.mp3"; sourceTree = "<group>"; };
+		0F199A4726AB31F100597D01 /* SongData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongData.swift; sourceTree = "<group>"; };
 		0F5300EA26AAAD4700FEB52D /* playerdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = playerdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F5300ED26AAAD4700FEB52D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F5300EF26AAAD4700FEB52D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0F5300F126AAAD4700FEB52D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0F5300F126AAAD4700FEB52D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0F5300F426AAAD4700FEB52D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F5300F626AAAD4800FEB52D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F5300F926AAAD4800FEB52D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,11 +74,19 @@
 			children = (
 				0F5300ED26AAAD4700FEB52D /* AppDelegate.swift */,
 				0F5300EF26AAAD4700FEB52D /* SceneDelegate.swift */,
-				0F5300F126AAAD4700FEB52D /* ViewController.swift */,
+				0F5300F126AAAD4700FEB52D /* MainViewController.swift */,
+				0F199A4726AB31F100597D01 /* SongData.swift */,
 				0F5300F326AAAD4700FEB52D /* Main.storyboard */,
 				0F5300F626AAAD4800FEB52D /* Assets.xcassets */,
 				0F5300F826AAAD4800FEB52D /* LaunchScreen.storyboard */,
 				0F5300FB26AAAD4800FEB52D /* Info.plist */,
+				0F199A3C26AB27D800597D01 /* 不思議.mp3 */,
+				0F199A3826AB27D700597D01 /* 時よ.mp3 */,
+				0F199A3726AB27D700597D01 /* 戀.mp3 */,
+				0F199A3926AB27D700597D01 /* Family Song.mp3 */,
+				0F199A3B26AB27D800597D01 /* IDEA.mp3 */,
+				0F199A3D26AB27D800597D01 /* POP VIRUS.mp3 */,
+				0F199A3A26AB27D800597D01 /* SUN.mp3 */,
 			);
 			path = playerdemo;
 			sourceTree = "<group>";
@@ -125,9 +149,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F199A3F26AB27D800597D01 /* 時よ.mp3 in Resources */,
+				0F199A4226AB27D800597D01 /* IDEA.mp3 in Resources */,
 				0F5300FA26AAAD4800FEB52D /* LaunchScreen.storyboard in Resources */,
+				0F199A4326AB27D800597D01 /* 不思議.mp3 in Resources */,
+				0F199A4026AB27D800597D01 /* Family Song.mp3 in Resources */,
 				0F5300F726AAAD4800FEB52D /* Assets.xcassets in Resources */,
 				0F5300F526AAAD4700FEB52D /* Main.storyboard in Resources */,
+				0F199A4426AB27D800597D01 /* POP VIRUS.mp3 in Resources */,
+				0F199A4126AB27D800597D01 /* SUN.mp3 in Resources */,
+				0F199A3E26AB27D800597D01 /* 戀.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +169,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F5300F226AAAD4700FEB52D /* ViewController.swift in Sources */,
+				0F5300F226AAAD4700FEB52D /* MainViewController.swift in Sources */,
 				0F5300EE26AAAD4700FEB52D /* AppDelegate.swift in Sources */,
+				0F199A4826AB31F100597D01 /* SongData.swift in Sources */,
 				0F5300F026AAAD4700FEB52D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
