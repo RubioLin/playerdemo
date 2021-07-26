@@ -10,11 +10,10 @@ class ViewController: UIViewController {
     @IBOutlet var progressBarSlider: UISlider!
     @IBOutlet var volumeBarSlider: UISlider!
     @IBOutlet var timePassLabel: UILabel!
-    @IBOutlet var timeRemainLabel: UILabel!
+    @IBOutlet var songOfTimeLabel: UILabel!
     @IBOutlet var playpauseButton: UIButton!
     
     let player = AVPlayer()
-    var playerItem: AVPlayerItem?
     var currentSongIndex = 0
     var timePass: Double = 0
     
@@ -30,44 +29,42 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playSong(index: 0)
-        
+        progressBarSlider.setThumbImage(UIImage(systemName: "circle.fill"), for: .normal)
+        progressBarSlider.setThumbImage(UIImage(systemName: "circle.fill"), for: .highlighted)
+        playSong()
+        passTime()
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: .main) { (_) in
             self.nextSong()
-            self.player.play()
+            self.playSong()
+            self.player.removeTimeObserver(self.timeObserver)
+
         }
     }
     
-    func playSong(index: Int) {
-        player.replaceCurrentItem(with: AVPlayerItem(url: songs[index].songUrl))
-        timePass = AVPlayerItem(url: songs[index].songUrl).asset.duration.seconds
-        albumCoverImageView.image = songs[index].albumCover
-        songOfTitleLabel.text = songs[index].songOfTitle
-        singerLabel.text = songs[index].singer
-        playpauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+    func playSong() {
+        let playerItem = AVPlayerItem(url: songs[currentSongIndex].songUrl)
+        player.replaceCurrentItem(with: playerItem)
+        timePass = AVPlayerItem(url: songs[currentSongIndex].songUrl).asset.duration.seconds
+        albumCoverImageView.image = songs[currentSongIndex].albumCover
+        songOfTitleLabel.text = songs[currentSongIndex].songOfTitle
+        singerLabel.text = songs[currentSongIndex].singer
+        player.play()
+        playpauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+        
+        let duration = CMTimeGetSeconds(playerItem.asset.duration)
+        songOfTimeLabel.text = timeFormatChange(time: duration)
+        
+        progressBarSlider.setValue(Float(0), animated: true)
+        let targetTime: CMTime = CMTimeMake(value: Int64(0), timescale: 1)
+        player.seek(to: targetTime)
+        
+        progressBarSlider.minimumValue = 0
+        progressBarSlider.maximumValue = Float(duration)
+        
+        addProgressObserver(playerItem: playerItem)
+        
     }
-    
-    func passTime() {
-        player.addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 1), queue: DispatchQueue.main, using: { (CMTime) in
-            if self.player.currentItem?.status == .readyToPlay {
-                self.progressBarSlider.value = Float(CMTimeGetSeconds(self.player.currentTime()))
-                self.timePassLabel.text = self.timeFormatChange(time: CMTimeGetSeconds(self.player.currentTime()))
-            }
-        })
-    }
-                                    
-    func timeLabelUpdate() {
-        guard let duration = playerItem?.asset.duration else {
-            return
-        }
-        let seconds = CMTimeGetSeconds(duration)
-            timeRemainLabel.text = timeFormatChange(time: seconds)
-            progressBarSlider.minimumValue = 0
-            progressBarSlider.maximumValue = Float(seconds)
-            progressBarSlider.isContinuous = true
-    }
-    
     func timeFormatChange(time: Float64) -> String {
         let songLength = Int(time)
         let min = Int(songLength / 60)
@@ -87,7 +84,26 @@ class ViewController: UIViewController {
         }
         return time
     }
- 
+    
+    var timeObserver: Any?
+    func addProgressObserver(playerItem: AVPlayerItem) {
+        timeObserver = player.addPeriodicTimeObserver(forInterval: CMTimeMake(value: Int64(1.0), timescale: Int32(1.0)), queue: .main) {
+            [weak self] (time: CMTime) in
+            let currentTime = CMTimeGetSeconds(time)
+            self?.progressBarSlider.setValue(Float(currentTime), animated: true)        }
+    }
+    
+    func passTime() {
+        player.addPeriodicTimeObserver(forInterval: CMTimeMake(value: Int64(1), timescale: Int32(1)), queue: .main , using: { (CMTime) in
+            if self.player.currentItem?.status == .readyToPlay {
+                let currentTime = CMTimeGetSeconds(self.player.currentTime())
+                self.progressBarSlider.value = Float(currentTime)
+                self.timePassLabel.text = self.timeFormatChange(time: currentTime)
+                self.songOfTimeLabel.text = "\(self.timeFormatChange(time: Float64(self.progressBarSlider.maximumValue - self.progressBarSlider.value)))"
+            }
+        })
+    }
+    
     @IBAction func playpuaseChange(_ sender: UIButton) {
         if player.timeControlStatus == .playing {
             playpauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
@@ -107,10 +123,7 @@ class ViewController: UIViewController {
         else {
             currentSongIndex += 1
         }
-        player.replaceCurrentItem(with: AVPlayerItem(url: songs[currentSongIndex].songUrl))
-        albumCoverImageView.image = songs[currentSongIndex].albumCover
-        songOfTitleLabel.text = songs[currentSongIndex].songOfTitle
-        singerLabel.text = songs[currentSongIndex].singer
+        playSong()
        }
     
     @IBAction func previousSong() {
@@ -120,13 +133,10 @@ class ViewController: UIViewController {
         else {
             currentSongIndex -= 1
         }
-        player.replaceCurrentItem(with: AVPlayerItem(url: songs[currentSongIndex].songUrl))
-        albumCoverImageView.image = songs[currentSongIndex].albumCover
-        songOfTitleLabel.text = songs[currentSongIndex].songOfTitle
-        singerLabel.text = songs[currentSongIndex].singer
+        playSong()
         }
     
-    @IBAction func timeObserverSlider(_ sender: UISlider) {
+    @IBAction func progressBarChangeSlider(_ sender: UISlider) {
         player.seek(to: CMTimeMake(value: Int64(progressBarSlider.value), timescale: 1))
     }
     

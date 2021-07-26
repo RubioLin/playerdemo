@@ -58,10 +58,11 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ztk-X2-Xqn" userLabel="progressBar">
                                 <rect key="frame" x="55" y="521" width="265" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" name="secondaryColor"/>
                                 <color key="minimumTrackTintColor" red="1" green="0.88627450980392153" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="thumbTintColor" name="secondaryColor"/>
                                 <connections>
-                                    <action selector="timeObserverSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="xID-vh-rCB"/>
+                                    <action selector="progressBarChangeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="SY5-ak-Eo1"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYL-0P-Cc6" userLabel="playpauseButton">
@@ -151,8 +152,9 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OnQ-ye-tdT" userLabel="volumeBar">
                                 <rect key="frame" x="55" y="718" width="265" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" name="secondaryColor"/>
                                 <color key="minimumTrackTintColor" red="1" green="0.88627450980392153" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="thumbTintColor" name="secondaryColor"/>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6L-qC-ui1" userLabel="turnDownVolumeButton">
                                 <rect key="frame" x="15" y="715" width="35" height="35"/>
@@ -181,14 +183,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nI8-Oh-Avx" userLabel="currentTime">
-                                <rect key="frame" x="8" y="518" width="46" height="35"/>
+                                <rect key="frame" x="3" y="518" width="51" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="secondaryColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRw-qX-E9m" userLabel="remainTime ">
-                                <rect key="frame" x="325" y="518" width="46" height="35"/>
+                                <rect key="frame" x="321" y="518" width="51" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="secondaryColor"/>
@@ -204,9 +206,9 @@
                         <outlet property="playpauseButton" destination="tYL-0P-Cc6" id="4I6-hg-8jP"/>
                         <outlet property="progressBarSlider" destination="ztk-X2-Xqn" id="iHy-Mh-djE"/>
                         <outlet property="singerLabel" destination="jjw-A7-Bh3" id="41d-bK-scs"/>
+                        <outlet property="songOfTimeLabel" destination="LRw-qX-E9m" id="rLZ-m6-fEC"/>
                         <outlet property="songOfTitleLabel" destination="pVx-1x-OFu" id="hdm-yz-UG4"/>
                         <outlet property="timePassLabel" destination="nI8-Oh-Avx" id="pae-ZO-Pz2"/>
-                        <outlet property="timeRemainLabel" destination="LRw-qX-E9m" id="rLZ-m6-fEC"/>
                         <outlet property="volumeBarSlider" destination="OnQ-ye-tdT" id="VuD-g2-Tvs"/>
                     </connections>
                 </viewController>
