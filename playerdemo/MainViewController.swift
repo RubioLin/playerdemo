@@ -1,5 +1,6 @@
 import UIKit
 import AVFoundation
+import MediaPlayer
 
 class ViewController: UIViewController {
     
@@ -104,6 +105,8 @@ class ViewController: UIViewController {
         })
     }
     
+    
+    
     @IBAction func playpuaseChange(_ sender: UIButton) {
         if player.timeControlStatus == .playing {
             playpauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
@@ -136,8 +139,16 @@ class ViewController: UIViewController {
         playSong()
         }
     
+    
+    
     @IBAction func progressBarChangeSlider(_ sender: UISlider) {
         player.seek(to: CMTimeMake(value: Int64(progressBarSlider.value), timescale: 1))
     }
     
+    @IBAction func volumeChange(_ sender: UISlider) {
+        player.volume = sender.value
+    }
 }
+
+
+
