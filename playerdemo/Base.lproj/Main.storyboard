@@ -6,7 +6,6 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -52,8 +51,11 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </backgroundConfiguration>
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
-                                    <color key="baseForegroundColor" systemColor="secondaryLabelColor"/>
+                                    <color key="baseForegroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="likeChange:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hj1-UH-BHE"/>
+                                </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ztk-X2-Xqn" userLabel="progressBar">
                                 <rect key="frame" x="55" y="521" width="265" height="30"/>
@@ -133,6 +135,9 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
                                     <color key="baseForegroundColor" name="secondaryColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="typeRandomChange:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oHD-EC-n7f"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwN-bO-Ryw" userLabel="repeatButton">
                                 <rect key="frame" x="322" y="617" width="33" height="33"/>
@@ -148,6 +153,9 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
                                     <color key="baseForegroundColor" name="secondaryColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="typeLoopChange:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8O7-LT-6fY"/>
+                                </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OnQ-ye-tdT" userLabel="volumeBar">
                                 <rect key="frame" x="55" y="718" width="265" height="30"/>
@@ -206,8 +214,10 @@
                     <connections>
                         <outlet property="albumCoverImageView" destination="HoK-vW-Ofx" id="8sx-yM-UB2"/>
                         <outlet property="likeButton" destination="1Gw-1g-H3i" id="xTd-pr-RnA"/>
+                        <outlet property="loopBtn" destination="FwN-bO-Ryw" id="55m-v5-0OK"/>
                         <outlet property="playpauseButton" destination="tYL-0P-Cc6" id="4I6-hg-8jP"/>
                         <outlet property="progressBarSlider" destination="ztk-X2-Xqn" id="iHy-Mh-djE"/>
+                        <outlet property="randomBtn" destination="PKs-jM-fwY" id="a1e-vQ-1G7"/>
                         <outlet property="singerLabel" destination="jjw-A7-Bh3" id="41d-bK-scs"/>
                         <outlet property="songOfTimeLabel" destination="LRw-qX-E9m" id="rLZ-m6-fEC"/>
                         <outlet property="songOfTitleLabel" destination="pVx-1x-OFu" id="hdm-yz-UG4"/>
@@ -217,7 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="188" y="-24"/>
+            <point key="canvasLocation" x="-17" y="-12"/>
         </scene>
     </scenes>
     <resources>
@@ -235,8 +245,5 @@
         <namedColor name="secondaryColor">
             <color red="1" green="0.88599997758865356" blue="0.62000000476837158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

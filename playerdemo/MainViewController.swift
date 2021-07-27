@@ -13,10 +13,17 @@ class ViewController: UIViewController {
     @IBOutlet var timePassLabel: UILabel!
     @IBOutlet var songOfTimeLabel: UILabel!
     @IBOutlet var playpauseButton: UIButton!
+    @IBOutlet var loopBtn: UIButton!
+    @IBOutlet var randomBtn: UIButton!
     
     let player = AVPlayer()
     var currentSongIndex = 0
     var timePass: Double = 0
+    
+    enum type {
+    case typeDefault, typeLoopOne, typeRandom
+    }
+    var playType = type.typeDefault
     
     let songs:[SongData] = [
         SongData(songOfTitle: "不思議", singer: "星野源", albumCover: UIImage(named: "不思議"), songUrl: Bundle.main.url(forResource: "不思議", withExtension: "mp3")!),
@@ -34,10 +41,24 @@ class ViewController: UIViewController {
         progressBarSlider.setThumbImage(UIImage(systemName: "circle.fill"), for: .highlighted)
         playSong()
         passTime()
+        player.volume = 0.5
         
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: .main) { (_) in
-            self.nextSong()
-            self.playSong()
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: .main) { [self] (_) in
+            switch self.playType {
+            case .typeDefault:
+                if currentSongIndex == 6 {
+                    currentSongIndex = 0
+                }
+                else {
+                    currentSongIndex += 1
+                }
+                playSong()
+            case .typeLoopOne:
+                playSong()
+            case .typeRandom:
+                currentSongIndex = Int.random(in:0...6)
+                playSong()
+            }
             self.player.removeTimeObserver(self.timeObserver)
 
         }
@@ -118,28 +139,53 @@ class ViewController: UIViewController {
         }
     }
     
-    
     @IBAction func nextSong() {
-        if currentSongIndex == 6 {
-            currentSongIndex = 0
+        switch playType {
+        case .typeDefault:
+            if currentSongIndex == 6 {
+                currentSongIndex = 0
+            }
+            else {
+                currentSongIndex += 1
+            }
+            playSong()
+        case .typeLoopOne:
+            if currentSongIndex == 6 {
+                currentSongIndex = 0
+            }
+            else {
+                currentSongIndex += 1
+            }
+            playSong()
+        case .typeRandom:
+            currentSongIndex = Int.random(in:0...6)
+            playSong()
         }
-        else {
-            currentSongIndex += 1
-        }
-        playSong()
-       }
+    }
     
     @IBAction func previousSong() {
-        if currentSongIndex == 0 {
-            currentSongIndex = 6
+        switch playType {
+        case .typeDefault:
+            if currentSongIndex == 0 {
+                currentSongIndex = 6
+            }
+            else {
+                currentSongIndex -= 1
+            }
+            playSong()
+        case .typeLoopOne:
+            if currentSongIndex == 0 {
+                currentSongIndex = 6
+            }
+            else {
+                currentSongIndex -= 1
+            }
+            playSong()
+        case .typeRandom:
+            currentSongIndex = Int.random(in:0...6)
+            playSong()
         }
-        else {
-            currentSongIndex -= 1
-        }
-        playSong()
-        }
-    
-    
+    }
     
     @IBAction func progressBarChangeSlider(_ sender: UISlider) {
         player.seek(to: CMTimeMake(value: Int64(progressBarSlider.value), timescale: 1))
@@ -148,7 +194,61 @@ class ViewController: UIViewController {
     @IBAction func volumeChange(_ sender: UISlider) {
         player.volume = sender.value
     }
-}
+    
+    @IBAction func typeLoopChange(_ sender: UIButton) {
+        switch playType {
+        case .typeDefault:
+            playType = type.typeLoopOne
+            loopBtn.isSelected = true
+            loopBtn.setImage(UIImage(systemName: "repeat.1.circle.fill"), for: .normal)
+            randomBtn.setImage(UIImage(systemName: "shuffle"), for: .normal)
+        case .typeLoopOne:
+            playType = type.typeDefault
+            loopBtn.isSelected = false
+            loopBtn.setImage(UIImage(systemName: "repeat"), for: .normal)
+            randomBtn.setImage(UIImage(systemName: "shuffle"), for: .normal)
+        case .typeRandom:
+            if loopBtn.isSelected == true {
+                playType = type.typeLoopOne
+                randomBtn.setImage(UIImage(systemName: "shuffle"), for: .normal)
+                loopBtn.setImage(UIImage(systemName: "repeat.1.circle.fill"), for: .normal)
+            }
+            else if loopBtn.isSelected == false {
+                playType = type.typeDefault
+                randomBtn.setImage(UIImage(systemName: "shuffle"), for: .normal)
+                loopBtn.setImage(UIImage(systemName: "repeat"), for: .normal)
+            }
+        }
+        print(playType)
+    }
+    @IBAction func typeRandomChange(_ sender: UIButton) {
+        switch playType {
+        case .typeDefault:
+            playType = type.typeRandom
+            loopBtn.setImage(UIImage(systemName: "repeat"), for: .normal)
 
+            randomBtn.setImage(UIImage(systemName: "shuffle.circle.fill"), for: .normal)
+        case .typeLoopOne:
+            playType = type.typeRandom
+            loopBtn.setImage(UIImage(systemName: "repeat"), for: .normal)
+            randomBtn.setImage(UIImage(systemName: "shuffle.circle.fill"), for: .normal)
+        case .typeRandom:
+            if loopBtn.isSelected == true {
+                playType = type.typeLoopOne
+                randomBtn.setImage(UIImage(systemName: "shuffle"), for: .normal)
+                loopBtn.setImage(UIImage(systemName: "repeat.1.circle.fill"), for: .normal)
+            }
+            else if loopBtn.isSelected == false {
+                playType = type.typeDefault
+                randomBtn.setImage(UIImage(systemName: "shuffle"), for: .normal)
+                loopBtn.setImage(UIImage(systemName: "repeat"), for: .normal)
+            }
+        print(playType)
+        
+        }
+    }
+    @IBAction func likeChange(_ sender: UIButton) {
+    }
+}
 
 
