@@ -7,7 +7,6 @@ class ViewController: UIViewController {
     @IBOutlet var albumCoverImageView: UIImageView!
     @IBOutlet var songOfTitleLabel: UILabel!
     @IBOutlet var singerLabel: UILabel!
-    @IBOutlet var likeButton: UIButton!
     @IBOutlet var progressBarSlider: UISlider!
     @IBOutlet var volumeBarSlider: UISlider!
     @IBOutlet var timePassLabel: UILabel!
@@ -39,6 +38,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         progressBarSlider.setThumbImage(UIImage(systemName: "circle.fill"), for: .normal)
         progressBarSlider.setThumbImage(UIImage(systemName: "circle.fill"), for: .highlighted)
+        volumeBarSlider.setThumbImage(UIImage(systemName: "circle.fill"), for: .normal)
+        volumeBarSlider.setThumbImage(UIImage(systemName: "circle.fill"), for: .highlighted)
         playSong()
         passTime()
         player.volume = 0.5
@@ -219,7 +220,6 @@ class ViewController: UIViewController {
                 loopBtn.setImage(UIImage(systemName: "repeat"), for: .normal)
             }
         }
-        print(playType)
     }
     @IBAction func typeRandomChange(_ sender: UIButton) {
         switch playType {
@@ -243,11 +243,7 @@ class ViewController: UIViewController {
                 randomBtn.setImage(UIImage(systemName: "shuffle"), for: .normal)
                 loopBtn.setImage(UIImage(systemName: "repeat"), for: .normal)
             }
-        print(playType)
-        
         }
-    }
-    @IBAction func likeChange(_ sender: UIButton) {
     }
 }
 
