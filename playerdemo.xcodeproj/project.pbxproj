@@ -15,6 +15,8 @@
 		0F199A4326AB27D800597D01 /* 不思議.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0F199A3C26AB27D800597D01 /* 不思議.mp3 */; };
 		0F199A4426AB27D800597D01 /* POP VIRUS.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0F199A3D26AB27D800597D01 /* POP VIRUS.mp3 */; };
 		0F199A4826AB31F100597D01 /* SongData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F199A4726AB31F100597D01 /* SongData.swift */; };
+		0F3586D526B2F1FE0008D3F0 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3586D426B2F1FE0008D3F0 /* LaunchScreenViewController.swift */; };
+		0F3586D726B2F67C0008D3F0 /* BezierText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3586D626B2F67C0008D3F0 /* BezierText.swift */; };
 		0F5300EE26AAAD4700FEB52D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5300ED26AAAD4700FEB52D /* AppDelegate.swift */; };
 		0F5300F026AAAD4700FEB52D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5300EF26AAAD4700FEB52D /* SceneDelegate.swift */; };
 		0F5300F226AAAD4700FEB52D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5300F126AAAD4700FEB52D /* MainViewController.swift */; };
@@ -32,6 +34,8 @@
 		0F199A3C26AB27D800597D01 /* 不思議.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "不思議.mp3"; sourceTree = "<group>"; };
 		0F199A3D26AB27D800597D01 /* POP VIRUS.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "POP VIRUS.mp3"; sourceTree = "<group>"; };
 		0F199A4726AB31F100597D01 /* SongData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongData.swift; sourceTree = "<group>"; };
+		0F3586D426B2F1FE0008D3F0 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		0F3586D626B2F67C0008D3F0 /* BezierText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierText.swift; sourceTree = "<group>"; };
 		0F5300EA26AAAD4700FEB52D /* playerdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = playerdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F5300ED26AAAD4700FEB52D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F5300EF26AAAD4700FEB52D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,10 +78,12 @@
 			children = (
 				0F5300ED26AAAD4700FEB52D /* AppDelegate.swift */,
 				0F5300EF26AAAD4700FEB52D /* SceneDelegate.swift */,
-				0F5300F126AAAD4700FEB52D /* MainViewController.swift */,
 				0F199A4726AB31F100597D01 /* SongData.swift */,
-				0F5300F326AAAD4700FEB52D /* Main.storyboard */,
+				0F5300F126AAAD4700FEB52D /* MainViewController.swift */,
+				0F3586D426B2F1FE0008D3F0 /* LaunchScreenViewController.swift */,
+				0F3586D626B2F67C0008D3F0 /* BezierText.swift */,
 				0F5300F626AAAD4800FEB52D /* Assets.xcassets */,
+				0F5300F326AAAD4700FEB52D /* Main.storyboard */,
 				0F5300F826AAAD4800FEB52D /* LaunchScreen.storyboard */,
 				0F5300FB26AAAD4800FEB52D /* Info.plist */,
 				0F199A3C26AB27D800597D01 /* 不思議.mp3 */,
@@ -172,6 +178,8 @@
 				0F5300F226AAAD4700FEB52D /* MainViewController.swift in Sources */,
 				0F5300EE26AAAD4700FEB52D /* AppDelegate.swift in Sources */,
 				0F199A4826AB31F100597D01 /* SongData.swift in Sources */,
+				0F3586D726B2F67C0008D3F0 /* BezierText.swift in Sources */,
+				0F3586D526B2F1FE0008D3F0 /* LaunchScreenViewController.swift in Sources */,
 				0F5300F026AAAD4700FEB52D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,8 +332,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = playerdemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -337,7 +346,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -351,8 +360,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = playerdemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -364,7 +374,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

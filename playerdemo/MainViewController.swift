@@ -2,7 +2,7 @@ import UIKit
 import AVFoundation
 import MediaPlayer
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     @IBOutlet var albumCoverImageView: UIImageView!
     @IBOutlet var songOfTitleLabel: UILabel!
