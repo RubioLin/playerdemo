@@ -2,7 +2,7 @@ import UIKit
 
 class BezierText: UIView {
     //動畫時間
-    private let duration:TimeInterval = 4
+    private let duration:TimeInterval = 5
      
     //書寫圖層
     private let pathLayer = CAShapeLayer()
