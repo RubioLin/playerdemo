@@ -8,7 +8,8 @@ class LaunchScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "secondaryColor")
-        bezierText = BezierText(frame: CGRect(x: 37.5, y: 317, width: 300, height: 100))
+        bezierText = BezierText(frame: CGRect(x: .zero, y: .zero, width: 300, height: 100))
+        bezierText.center = view.center
         view.addSubview(bezierText)
         bezierText.show(text: hoshinoGen)
     }

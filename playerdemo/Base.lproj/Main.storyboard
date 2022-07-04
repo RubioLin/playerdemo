@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19142.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="elc-O6-GI9">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="elc-O6-GI9">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19129"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -15,129 +15,116 @@
             <objects>
                 <viewController storyboardIdentifier="MVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="playerdemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HoK-vW-Ofx" userLabel="albumCover">
-                                <rect key="frame" x="40" y="88" width="295" height="295"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HoK-vW-Ofx" userLabel="albumCover">
+                                <rect key="frame" x="41.5" y="58.5" width="331" height="331"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HoK-vW-Ofx" secondAttribute="height" id="Rbu-eF-YPC"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Singer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjw-A7-Bh3" userLabel="singer">
-                                <rect key="frame" x="92" y="458" width="190" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Singer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjw-A7-Bh3" userLabel="singer">
+                                <rect key="frame" x="0.0" y="493" width="414" height="44.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ztk-X2-Xqn" userLabel="progressBar">
-                                <rect key="frame" x="55" y="521" width="265" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ztk-X2-Xqn" userLabel="progressBar">
+                                <rect key="frame" x="55" y="567" width="304" height="32"/>
                                 <color key="tintColor" name="secondaryColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="mc6-Jp-SFV"/>
+                                </constraints>
                                 <color key="minimumTrackTintColor" red="1" green="0.88627450980392153" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" name="secondaryColor"/>
                                 <connections>
                                     <action selector="progressBarChangeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="SY5-ak-Eo1"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYL-0P-Cc6" userLabel="playpauseButton">
-                                <rect key="frame" x="152" y="598" width="71" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYL-0P-Cc6" userLabel="playpauseButton">
+                                <rect key="frame" x="177" y="664.5" width="60" height="60"/>
+                                <color key="backgroundColor" name="mainColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tYL-0P-Cc6" secondAttribute="height" id="ffA-aB-CYh"/>
+                                    <constraint firstAttribute="width" constant="60" id="oz2-G4-Rqb"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="" cornerStyle="capsule">
-                                    <imageReference key="image" image="play.fill" catalog="system"/>
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </backgroundConfiguration>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <state key="normal" image="play.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
+                                </state>
                                 <connections>
                                     <action selector="playpuaseChange:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FN5-GT-LTB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBL-iD-kye" userLabel="nextButton">
-                                <rect key="frame" x="243" y="604" width="59" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBL-iD-kye" userLabel="nextButton">
+                                <rect key="frame" x="261" y="667" width="55" height="55"/>
+                                <color key="backgroundColor" name="secondaryColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mBL-iD-kye" secondAttribute="height" multiplier="1:1" id="aCy-eW-iGZ"/>
+                                    <constraint firstAttribute="width" constant="55" id="pWV-fu-J06"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule">
-                                    <imageReference key="image" image="forward.end.fill" catalog="system"/>
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="1" green="0.88627450980392153" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </backgroundConfiguration>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <state key="normal" image="forward.end.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
+                                </state>
                                 <connections>
                                     <action selector="nextSong" destination="BYZ-38-t0r" eventType="touchUpInside" id="oRd-kq-Fs6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSN-cY-iBO" userLabel="previousButton">
-                                <rect key="frame" x="73" y="604" width="59" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSN-cY-iBO" userLabel="previousButton">
+                                <rect key="frame" x="98" y="667" width="55" height="55"/>
+                                <color key="backgroundColor" name="secondaryColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xSN-cY-iBO" secondAttribute="height" multiplier="1:1" id="fIs-FU-Taz"/>
+                                    <constraint firstAttribute="width" constant="55" id="g8b-XH-r4y"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule">
-                                    <imageReference key="image" image="backward.end.fill" catalog="system"/>
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="1" green="0.88627450980392153" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </backgroundConfiguration>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <state key="normal" image="backward.end.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
+                                </state>
                                 <connections>
                                     <action selector="previousSong" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mm2-Pk-xcE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKs-jM-fwY" userLabel="shuffleButton">
-                                <rect key="frame" x="20" y="617" width="40" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKs-jM-fwY" userLabel="shuffleButton">
+                                <rect key="frame" x="24" y="669.5" width="50" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule">
-                                    <imageReference key="image" image="shuffle" catalog="system"/>
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" name="backgroundColor"/>
-                                    </backgroundConfiguration>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="33"/>
-                                    <color key="baseForegroundColor" name="secondaryColor"/>
-                                </buttonConfiguration>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="P6M-Wz-IUN"/>
+                                    <constraint firstAttribute="width" secondItem="PKs-jM-fwY" secondAttribute="height" id="px3-bA-K76"/>
+                                </constraints>
+                                <color key="tintColor" name="secondaryColor"/>
+                                <state key="normal" image="shuffle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
+                                </state>
                                 <connections>
                                     <action selector="typeRandomChange:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oHD-EC-n7f"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwN-bO-Ryw" userLabel="repeatButton">
-                                <rect key="frame" x="322" y="617" width="33" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwN-bO-Ryw" userLabel="repeatButton">
+                                <rect key="frame" x="340" y="669.5" width="50" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule">
-                                    <imageReference key="image" image="repeat" catalog="system"/>
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" name="backgroundColor"/>
-                                    </backgroundConfiguration>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="33"/>
-                                    <color key="baseForegroundColor" name="secondaryColor"/>
-                                </buttonConfiguration>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="K11-Vw-F7Y"/>
+                                    <constraint firstAttribute="width" secondItem="FwN-bO-Ryw" secondAttribute="height" multiplier="1:1" id="rBr-cY-aqC"/>
+                                </constraints>
+                                <color key="tintColor" name="secondaryColor"/>
+                                <state key="normal" image="repeat" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
+                                </state>
                                 <connections>
                                     <action selector="typeLoopChange:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8O7-LT-6fY"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OnQ-ye-tdT" userLabel="volumeBar">
-                                <rect key="frame" x="55" y="718" width="265" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OnQ-ye-tdT" userLabel="volumeBar">
+                                <rect key="frame" x="55" y="814" width="304" height="31"/>
                                 <color key="tintColor" name="secondaryColor"/>
                                 <color key="minimumTrackTintColor" red="1" green="0.88627450980392153" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" name="secondaryColor"/>
@@ -145,62 +132,92 @@
                                     <action selector="volumeChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="zAl-qn-CH0"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6L-qC-ui1" userLabel="turnDownVolumeButton">
-                                <rect key="frame" x="15" y="715" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <imageReference key="image" image="speaker.fill" catalog="system"/>
-                                    <backgroundConfiguration key="background"/>
-                                    <color key="baseForegroundColor" red="1" green="0.88627450980392153" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="volumeChangebutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5I0-O2-3hY"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6L-qC-ui1" userLabel="turnDownVolumeButton">
+                                <rect key="frame" x="8" y="811.5" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="D6p-ME-1ji"/>
+                                    <constraint firstAttribute="width" secondItem="n6L-qC-ui1" secondAttribute="height" id="Dxf-Yn-Txh"/>
+                                </constraints>
+                                <color key="tintColor" name="secondaryColor"/>
+                                <state key="normal" image="speaker.fill" catalog="system"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFc-QR-Ge6" userLabel="turnUpVolumeButton">
-                                <rect key="frame" x="325" y="715" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <imageReference key="image" image="speaker.wave.3.fill" catalog="system"/>
-                                    <backgroundConfiguration key="background"/>
-                                    <color key="baseForegroundColor" red="1" green="0.88627450980392153" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="turnUpVolumeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GkA-6F-3Ex"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFc-QR-Ge6" userLabel="turnUpVolumeButton">
+                                <rect key="frame" x="371" y="811.5" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PFc-QR-Ge6" secondAttribute="height" id="2Qb-xZ-fVb"/>
+                                    <constraint firstAttribute="width" constant="35" id="bl1-BR-ffN"/>
+                                </constraints>
+                                <color key="tintColor" name="secondaryColor"/>
+                                <state key="normal" image="speaker.wave.3.fill" catalog="system"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nI8-Oh-Avx" userLabel="currentTime">
-                                <rect key="frame" x="3" y="518" width="51" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nI8-Oh-Avx" userLabel="currentTime">
+                                <rect key="frame" x="4" y="567" width="46" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="secondaryColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRw-qX-E9m" userLabel="remainTime ">
-                                <rect key="frame" x="321" y="518" width="51" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="secondaryColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="songOfName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVx-1x-OFu" userLabel="songOfTitle">
-                                <rect key="frame" x="92" y="396" width="190" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVx-1x-OFu" userLabel="songOfTitle">
+                                <rect key="frame" x="0.0" y="425.5" width="414" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRw-qX-E9m" userLabel="remainTime ">
+                                <rect key="frame" x="364" y="567" width="46" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="secondaryColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="0.97254901960784312" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tYL-0P-Cc6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0Pe-Dd-C8x"/>
+                            <constraint firstItem="PFc-QR-Ge6" firstAttribute="centerY" secondItem="OnQ-ye-tdT" secondAttribute="centerY" id="3C4-aB-wvo"/>
+                            <constraint firstItem="tYL-0P-Cc6" firstAttribute="centerY" secondItem="xSN-cY-iBO" secondAttribute="centerY" id="3ua-bC-ds0"/>
+                            <constraint firstItem="pVx-1x-OFu" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.05" id="4z2-fD-fbl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LRw-qX-E9m" secondAttribute="trailing" constant="4" id="5IN-qz-UrE"/>
+                            <constraint firstItem="tYL-0P-Cc6" firstAttribute="centerY" secondItem="PKs-jM-fwY" secondAttribute="centerY" id="5ko-6g-vSz"/>
+                            <constraint firstItem="OnQ-ye-tdT" firstAttribute="centerY" secondItem="n6L-qC-ui1" secondAttribute="centerY" id="8si-lc-UQ1"/>
+                            <constraint firstItem="ztk-X2-Xqn" firstAttribute="leading" secondItem="nI8-Oh-Avx" secondAttribute="trailing" constant="7" id="AQM-Pi-Lzk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jjw-A7-Bh3" secondAttribute="trailing" id="BFT-eF-beB"/>
+                            <constraint firstItem="jjw-A7-Bh3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.15" id="BeG-KP-thK"/>
+                            <constraint firstItem="HoK-vW-Ofx" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="CGm-uh-CYM"/>
+                            <constraint firstItem="pVx-1x-OFu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EUH-s3-1Wr"/>
+                            <constraint firstItem="FwN-bO-Ryw" firstAttribute="centerY" secondItem="tYL-0P-Cc6" secondAttribute="centerY" id="HcX-gH-p8n"/>
+                            <constraint firstItem="OnQ-ye-tdT" firstAttribute="leading" secondItem="n6L-qC-ui1" secondAttribute="trailing" constant="14" id="Hjh-0c-WZJ"/>
+                            <constraint firstItem="FwN-bO-Ryw" firstAttribute="leading" secondItem="mBL-iD-kye" secondAttribute="trailing" constant="24" id="OFl-Fd-8iI"/>
+                            <constraint firstItem="tYL-0P-Cc6" firstAttribute="leading" secondItem="xSN-cY-iBO" secondAttribute="trailing" constant="24" id="OOO-dI-sqX"/>
+                            <constraint firstItem="n6L-qC-ui1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="RAr-G6-Q1M"/>
+                            <constraint firstItem="LRw-qX-E9m" firstAttribute="centerY" secondItem="ztk-X2-Xqn" secondAttribute="centerY" id="SW0-7e-tNc"/>
+                            <constraint firstItem="PFc-QR-Ge6" firstAttribute="leading" secondItem="OnQ-ye-tdT" secondAttribute="trailing" constant="14" id="V6i-lq-DoS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pVx-1x-OFu" secondAttribute="trailing" id="WmD-JT-hpy"/>
+                            <constraint firstItem="ztk-X2-Xqn" firstAttribute="centerY" secondItem="nI8-Oh-Avx" secondAttribute="centerY" id="aVy-hF-1eC"/>
+                            <constraint firstItem="HoK-vW-Ofx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bYM-ty-0cJ"/>
+                            <constraint firstItem="LRw-qX-E9m" firstAttribute="leading" secondItem="ztk-X2-Xqn" secondAttribute="trailing" constant="7" id="dOF-Kr-y5W"/>
+                            <constraint firstItem="OnQ-ye-tdT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.85" id="dz5-sY-244"/>
+                            <constraint firstItem="ztk-X2-Xqn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.3" id="fW8-tM-yfV"/>
+                            <constraint firstItem="xSN-cY-iBO" firstAttribute="leading" secondItem="PKs-jM-fwY" secondAttribute="trailing" constant="24" id="fau-Kv-05e"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PFc-QR-Ge6" secondAttribute="trailing" constant="8" id="h9x-vS-KfW"/>
+                            <constraint firstItem="tYL-0P-Cc6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.55" id="j1z-WW-46U"/>
+                            <constraint firstItem="nI8-Oh-Avx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="4" id="jPS-TX-8EH"/>
+                            <constraint firstItem="pVx-1x-OFu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oz8-P0-vrb"/>
+                            <constraint firstItem="mBL-iD-kye" firstAttribute="leading" secondItem="tYL-0P-Cc6" secondAttribute="trailing" constant="24" id="pno-84-mWS"/>
+                            <constraint firstItem="ztk-X2-Xqn" firstAttribute="height" secondItem="nI8-Oh-Avx" secondAttribute="height" id="qof-IZ-dPM"/>
+                            <constraint firstItem="HoK-vW-Ofx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.5" id="sUD-jC-l6S"/>
+                            <constraint firstItem="jjw-A7-Bh3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tSN-Jj-gpf"/>
+                            <constraint firstItem="jjw-A7-Bh3" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.05" id="udO-jg-6Oj"/>
+                            <constraint firstItem="LRw-qX-E9m" firstAttribute="height" secondItem="ztk-X2-Xqn" secondAttribute="height" id="vMR-3F-bHu"/>
+                            <constraint firstItem="mBL-iD-kye" firstAttribute="centerY" secondItem="tYL-0P-Cc6" secondAttribute="centerY" id="xkg-Jw-Zt6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tWM-DZ-G2z"/>
                     <connections>
                         <outlet property="albumCoverImageView" destination="HoK-vW-Ofx" id="8sx-yM-UB2"/>
                         <outlet property="loopBtn" destination="FwN-bO-Ryw" id="55m-v5-0OK"/>
+                        <outlet property="nextButton" destination="mBL-iD-kye" id="23w-KU-nqD"/>
                         <outlet property="playpauseButton" destination="tYL-0P-Cc6" id="4I6-hg-8jP"/>
+                        <outlet property="previousButton" destination="xSN-cY-iBO" id="980-ws-ftb"/>
                         <outlet property="progressBarSlider" destination="ztk-X2-Xqn" id="iHy-Mh-djE"/>
                         <outlet property="randomBtn" destination="PKs-jM-fwY" id="a1e-vQ-1G7"/>
                         <outlet property="singerLabel" destination="jjw-A7-Bh3" id="41d-bK-scs"/>
@@ -219,7 +236,7 @@
             <objects>
                 <viewController id="elc-O6-GI9" customClass="LaunchScreenViewController" customModule="playerdemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uZV-yj-tgF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="UmK-Y8-MBl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -241,8 +258,8 @@
         <image name="shuffle" catalog="system" width="128" height="95"/>
         <image name="speaker.fill" catalog="system" width="128" height="128"/>
         <image name="speaker.wave.3.fill" catalog="system" width="128" height="86"/>
-        <namedColor name="backgroundColor">
-            <color red="1" green="0.97299998998641968" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="mainColor">
+            <color red="1" green="0.80000001192092896" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="secondaryColor">
             <color red="1" green="0.88599997758865356" blue="0.62000000476837158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

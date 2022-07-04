@@ -12,6 +12,8 @@ class MainViewController: UIViewController {
     @IBOutlet var timePassLabel: UILabel!
     @IBOutlet var songOfTimeLabel: UILabel!
     @IBOutlet var playpauseButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var previousButton: UIButton!
     @IBOutlet var loopBtn: UIButton!
     @IBOutlet var randomBtn: UIButton!
     
@@ -36,6 +38,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setButtonConfiguration()
         progressBarSlider.setThumbImage(UIImage(systemName: "circle.fill"), for: .normal)
         progressBarSlider.setThumbImage(UIImage(systemName: "circle.fill"), for: .highlighted)
         volumeBarSlider.setThumbImage(UIImage(systemName: "circle.fill"), for: .normal)
@@ -63,6 +66,15 @@ class MainViewController: UIViewController {
             self.player.removeTimeObserver(self.timeObserver)
 
         }
+    }
+    
+    func setButtonConfiguration() {
+        playpauseButton.layer.masksToBounds = true
+        nextButton.layer.masksToBounds = true
+        previousButton.layer.masksToBounds = true
+        playpauseButton.layer.cornerRadius = playpauseButton.frame.width / 2
+        nextButton.layer.cornerRadius = nextButton.frame.width / 2
+        previousButton.layer.cornerRadius = previousButton.frame.width / 2
     }
     
     func playSong() {
@@ -226,7 +238,6 @@ class MainViewController: UIViewController {
         case .typeDefault:
             playType = type.typeRandom
             loopBtn.setImage(UIImage(systemName: "repeat"), for: .normal)
-
             randomBtn.setImage(UIImage(systemName: "shuffle.circle.fill"), for: .normal)
         case .typeLoopOne:
             playType = type.typeRandom
